@@ -6,10 +6,10 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
                     uniqueness: { case_sensitive: false }  
-  has_many :posts
+  has_many :posts, :dependent => :destroy
   
-  has_many :favorites
-  has_many :favorite_posts, through: :favorites, source: :post
+  has_many :favorites, :dependent => :destroy
+  has_many :favorite_posts, through: :favorites, source: :post, :dependent => :destroy
   #favorite_postsをfavoritesテーブルの中のpost_idとして取得
   #user.favorite_postsでユーザがお気に入りした投稿を取得
   
