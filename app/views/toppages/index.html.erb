@@ -1,4 +1,5 @@
 <% if logged_in? %>
+  <%= render 'posts/new', post: @post %>
 <% else %>
   <div class="center jumbotron">
     <div class="text-center">
@@ -7,3 +8,4 @@
     </div>
   </div>
 <% end %>
+<%= render 'posts/index', posts: @posts %>

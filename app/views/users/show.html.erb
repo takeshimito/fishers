@@ -5,9 +5,10 @@
       <div class="media-body ml-4">
         <h4><%= @user.name %></h4>
       </div>
-      <a href="#">
-        <button type="button" class="btn btn-primary">編集</button>
-      </a>
+      <% if @user = current_user %>
+        <%= link_to '編集', edit_user_path(@user), class: 'btn btn-primary' %>
+      <% else %>
+      <% end %>
     </div>
   </div>
   <div class="row justify-content-md-center mt-3">

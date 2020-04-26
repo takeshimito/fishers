@@ -1,0 +1,27 @@
+<div class="row">
+  <h3>新規投稿</h3>
+    <%= form_with(model: post, local: true) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+      <div class="form-group">
+        <%= f.label :title, 'タイトル' %>
+          <%= f.text_field :title, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :content, '内容' %>
+          <%= f.text_field :content, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :prefecture_id, '都道府県' %>
+          <%= f.text_field :prefecture_id, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :location, '位置情報' %>
+          <%= f.text_field :location, class: 'form-control' %>
+      </div>
+      <div class="media">
+        <img src="#">画像を選択してもらう
+      </div>
+      <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
+      </div>
+    <% end %>
+  </div>

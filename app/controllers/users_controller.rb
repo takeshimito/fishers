@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = 'ユーザー登録しました'
-      redirect_to @user
+      redirect_to root_url
     else
       flash.now[:danger] = 'ユーザー登録に失敗しました'
       render :new
@@ -21,15 +21,25 @@ class UsersController < ApplicationController
   end
   
   def edit
+    @user = User.find(params[:id])
   end
   
   def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:success] = '正常に更新されました'
+      redirect_to @user
+    else
+      flash.now[:danger] = '更新されませんでした'
+      render :edit
+    end
+ 
   end
   
   def destroy
     @user = User.find(params[:id])
-    @message.destroy
-    flash[:success] = '退会手続きが完了しました'
+    @user.destroy
+    flash[:success] = 'アカウントの削除が完了しました'
     redirect_to root_url
   end
 end
