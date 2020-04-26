@@ -1,44 +1,28 @@
 <h3>投稿一覧</h3>
 <ul class="list-unstyled">
   <% posts.each do |post| %>
-    <li class="media mb-3">
-      <img class="mr-2 rounded" src="#">
-      <div class="media-body">
-        <div>
-          <%= link_to post.user.name, user_path(post.user) %>
-          <span class="text-muted">投稿時間 <%= post.created_at %></span>
-        </div>
-        <div>
-          <p><%= post.content %></p>
+    <div class="row">
+      <div class="card col-sm-10">
+        <h5 class="card-title">
+          <%= link_to post.user.name, user_path(post.user) %> : 
+          <%= link_to post.title, post_path(post) %>
+        </h5>
+        <div class="row no-gutters">
+          <div class="col-md-8">
+            <div class="card-body">
+              <div class="card-text">
+                <%= post.content %>
+              </div>  
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-img">
+              <%= post.image %>
+            </div>
+          </div>
         </div>
       </div>
-    </li>
-    
-<!-- 
-<div class="container">
-  <div class="content-headder">
-    <%= link_to post.user.name, user_path(post.user) %> : 
-    <%= link_to post.title, post_path(post) %>
-  </div>
-  <div class="content-box">
-    <div class="content">
-      <%= post.content %>
     </div>
-    <div class="image-box">
-      <%= post.image %>
-    </div>
-    <div class="prefecture-box">
-      <%= post.prefecture_id %>
-    </div>
-    <div class="local-box">
-      <%= post.location %>
-    </div>
-  </div>
-  <div class="favorite">
-    <button>イイね</button>
-  </div>
-</div>
--->
   <% end %>
   <%= paginate posts %>
 </ul>
