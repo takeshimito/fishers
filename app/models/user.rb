@@ -1,4 +1,11 @@
 class User < ApplicationRecord
+  before_save { self.email.downcase! }
+  has_secure_password
+  #ログイン認証のための準備をしてくれる
+  validates :name, presence: true, length: { maximum: 50 }
+  validates :email, presence: true, length: { maximum: 255 },
+                    format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
+                    uniqueness: { case_sensitive: false }  
   has_many :posts
   
   has_many :favorites
@@ -25,11 +32,3 @@ class User < ApplicationRecord
   end
   #postモデルの中からユーザと紐付いているfavorite_postsの全てのpostを取得する
 end
-__END__
-  before_save { self.email.downcase! }
-  has_secure_password
-  #ログイン認証のための準備をしてくれる
-  validates :name, presence: true, length: { maximum: 50 }
-  validates :email, presence: true, length: { maximum: 255 },
-                    format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
-                    uniqueness: { case_sensitive: false }
