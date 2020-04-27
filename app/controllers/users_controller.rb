@@ -3,6 +3,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = Post.order(id: :desc).page(params[:page]).per(25)
+    @likes = @user.favorite_posts.order(id: :desc).page(params[:page]).per(25)
   end
 
   def new
@@ -42,6 +44,12 @@ class UsersController < ApplicationController
     flash[:success] = 'アカウントの削除が完了しました'
     redirect_to root_url
   end
+  
+  def likes
+    @user = User.find(params[:id])
+    @likes = @user.favorite_posts.order(id: :desc).page(params[:page]).per(25)
+  end
+  
 end
   
   private

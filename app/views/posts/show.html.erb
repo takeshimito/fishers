@@ -1,2 +1,28 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<h4>投稿詳細</h4>
+<div class="row">
+      <div class="card col-sm-10">
+        <h5 class="card-title">
+          <%= link_to @post.user.name, user_path(@post.user) %> : 
+          <%= @post.title %>
+        </h5>
+        <div class="row no-gutters">
+          <div class="col-md-8">
+            <div class="card-body">
+              <div class="card-text">
+                <%= @post.content %>
+              </div>  
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-img">
+              <%= @post.image %>
+            </div>
+          </div>
+        </div>
+        <% if @post.user = current_user %>
+        <div>
+          <%= link_to '編集', edit_post_path(@post), class: 'btn btn-primary' %>
+        </div>
+        <% end %>
+      </div>
+    </div>

@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
   
   def show
+    @post = Post.find(params[:id])
   end
 
   def create
@@ -17,9 +18,19 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
 
   def update
+    @post = current_user.posts.build(post_params)
+    if @post.save
+      flash[:success] = '投稿の編集が完了しました'
+      redirect_to @post
+    else
+      @posts = current_user.posts.order(id: :desc).page(params[:page])
+      flash.now[:danger] = '投稿の編集に失敗しました'
+      render :edit
+    end
   end
 
   def destroy

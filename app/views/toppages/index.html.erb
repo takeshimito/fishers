@@ -1,11 +1,19 @@
-<% if logged_in? %>
-  <%= render 'posts/new', post: @post %>
-<% else %>
-  <div class="center jumbotron">
-    <div class="text-center">
-      <h1>Fishersの紹介部分</h1>
-      <%= link_to '今すぐ登録!', signup_path, class: 'btn btn-lg btn-primary' %>
+<div class="container">
+  <% if logged_in? %>
+    <div class="row justify-content-center mt-3">
+      <%= render 'posts/new', post: @post %>
     </div>
+  <% else %>
+    <div class="row justify-content-center mt-3">
+      <div class="center jumbotron">
+        <div class="text-center">
+          <h1>Fishersの紹介部分</h1>
+          <%= link_to '今すぐ登録!', signup_path, class: 'btn btn-lg btn-primary' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <div class="row justify-content-center mt-3">
+    <%= render 'posts/index', posts: @posts %>
   </div>
-<% end %>
-<%= render 'posts/index', posts: @posts %>
+</div>

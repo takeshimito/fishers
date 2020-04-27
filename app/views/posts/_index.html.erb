@@ -1,4 +1,4 @@
-<h3>投稿一覧</h3>
+<h5>投稿一覧</h5>
 <ul class="list-unstyled">
   <% posts.each do |post| %>
     <div class="row">
@@ -22,6 +22,7 @@
           </div>
         </div>
       </div>
+      <%= render 'favorites/favorite_button',  post: post %>
     </div>
   <% end %>
   <%= paginate posts %>
