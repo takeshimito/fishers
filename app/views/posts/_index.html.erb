@@ -1,29 +1,24 @@
-<h5>投稿一覧</h5>
-<ul class="list-unstyled">
-  <% posts.each do |post| %>
-    <div class="row">
-      <div class="card col-sm-10">
-        <h5 class="card-title">
-          <%= link_to post.user.name, user_path(post.user) %> : 
-          <%= link_to post.title, post_path(post) %>
-        </h5>
-        <div class="row no-gutters">
-          <div class="col-md-8">
-            <div class="card-body">
-              <div class="card-text">
-                <%= post.content %>
-              </div>  
-            </div>
+<div class="index">
+  <div class="headder">
+    <h5>投稿一覧</h5>
+  </div>
+    <% posts.each do |post| %>
+      <div class="col-sm my-3">
+        <div class="card col-sm-10">
+          <div class="card-img-top">
+            <%= post.image %>
           </div>
-          <div class="col-md-4">
-            <div class="card-img">
-              <%= post.image %>
-            </div>
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= link_to post.user.name, user_path(post.user) %>:
+              <%= link_to post.title, post_path(post) %>
+            </h5>
+            <p class="card-text"><%= post.content %></p>
+            <%= render 'favorites/favorite_button',  post: post %>
           </div>
         </div>
       </div>
-      <%= render 'favorites/favorite_button',  post: post %>
-    </div>
-  <% end %>
-  <%= paginate posts %>
-</ul>
+    <% end %>
+    <%= paginate posts %>
+  </div>
+</div>

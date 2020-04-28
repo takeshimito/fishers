@@ -1,18 +1,19 @@
 <div class="container">
-  <div class="row justify-content-md-center">
-    <div class="media col-sm-8 ">
-      <img src="#" class="mr-3">
-      <div class="media-body ml-4">
-        <h4><%= @user.name %></h4>
+  <div class="row justify-content-center mt-3">
+    <div class="col-sm-10">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= @user.name %></h5>
+          <% if @user == current_user %>
+            <%= link_to '編集', edit_user_path(@user), class: 'btn btn-primary' %>
+          <% end %>
+        </div>
       </div>
-      <% if @user = current_user %>
-        <%= link_to '編集', edit_user_path(@user), class: 'btn btn-primary' %>
-      <% else %>
-      <% end %>
     </div>
   </div>
-  <div class="row justify-content-md-center mt-3">
-    <div class="col-sm-8">
+  <div class="row justify-content-center my-3">
+    <div class="col-sm-10">
       <ul class="nav nav-tabs nav-justified mb-3">
         <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">投稿一覧</a></li>
         <li class="nav-item"><a href="<%= likes_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(likes_user_path(@user)) %>">お気に入り投稿一覧</a></li>

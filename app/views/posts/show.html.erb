@@ -19,7 +19,7 @@
             </div>
           </div>
         </div>
-        <% if @post.user = current_user %>
+        <% if current_user == @post.user %>
         <div>
           <%= link_to '編集', edit_post_path(@post), class: 'btn btn-primary' %>
         </div>
