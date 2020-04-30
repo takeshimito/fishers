@@ -30,8 +30,9 @@
         <%= f.label :location, '位置情報' %>
         <%= f.text_field :location, class: 'form-control' %>
       </div>
-      <div class="media">
-        <img src="#">画像を選択してもらう
+      <div class="form-group">
+        <%= f.label :image %>
+        <%= f.file_field :image, class: 'form-control' %>
       </div>
       <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
     <% end %>

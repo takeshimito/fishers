@@ -31,4 +31,6 @@ class User < ApplicationRecord
     Post.whrere(post_id: self.favorite_posts_ids)
   end
   #postモデルの中からユーザと紐付いているfavorite_postsの全てのpostを取得する
+  
+  mount_uploader :image, ImageUploader
 end

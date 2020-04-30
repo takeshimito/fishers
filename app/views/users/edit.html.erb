@@ -21,9 +21,10 @@
           <%= f.label :password_confirmation, 'パスワード確認' %>
             <%= f.password_field :password_confirmation, class: 'form-control' %>
         </div>
-        <div class="media">
-          <img src="#">画像を選択してもらう
-        </div>
+        <div class="form-group">
+        <%= f.label :image, 'アイコン' %>
+        <%= f.file_field :image, class: 'form-control' %>
+      </div>
         <%= f.submit 'ユーザー情報更新', class: 'btn btn-primary btn-block' %>
       <% end %>
       <%= link_to 'アカウントの削除', withdrawal_path, class: 'btn btn-primary btn-block mt-3' %>
