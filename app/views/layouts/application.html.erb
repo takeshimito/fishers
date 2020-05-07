@@ -16,9 +16,19 @@
   </head>
   <body>
     <%= render 'layouts/navbar' %>
-    <div class="container">
-      <%= render 'layouts/flash_messages' %>
-      <%= yield %>
+    <%= render 'layouts/flash_messages' %>
+    
+    <div class="row ">
+      <aside class="col-sm-2">
+        <%= render 'layouts/sidebar' %>
+      </aside>
+      <div class="col-sm-8">
+        <%= yield %>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCISOeNpQdYxywtcTIhFqsgbrWRmU7bJLY&callback=initMap"></script>
+      </div>
     </div>
   </body>
+  <footer>
+      <%= render 'layouts/footer' %>
+    </footer>
 </html>

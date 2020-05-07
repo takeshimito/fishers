@@ -6,15 +6,15 @@
     <%= form_with(model: @user, local: true) do |f| %>
       <%= render 'layouts/error_messages', model: f.object %>
       <div class="form-group">
-        <%= f.label :name, 'ユーザー名' %>
+        <%= f.label :name, 'ユーザー名（必須）' %>
           <%= f.text_field :name, class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :email, 'メールアドレス' %>
+        <%= f.label :email, 'メールアドレス（必須）' %>
           <%= f.email_field :email, class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :password, 'パスワード' %>
+        <%= f.label :password, 'パスワード（必須・半角６文字以上で設定してください）' %>
           <%= f.password_field :password, class: 'form-control' %>
       </div>
       <div class="form-group">

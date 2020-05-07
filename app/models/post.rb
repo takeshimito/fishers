@@ -10,4 +10,35 @@ class Post < ApplicationRecord
   validates :title, presence: true, length: { maximum: 50 }
   
   mount_uploader :image, ImageUploader
+
+  
+  def self.search(content_key) 
+    if content_key
+      where(['content LIKE ?', "%#{content_key}%"]) 
+    else
+      all 
+    end
+  end
+
+  def self.search_prefecture(prefecture_key)
+    array = string_to_int(prefecture_key)
+    if prefecture_key
+      where(prefecture_id: array)
+      #prefecture_idカラムの値＝引数prefecture_keyの数値であるデータを絞り込む
+    else
+      all 
+    end
+  end
+  
+  private
+  
+  def self.string_to_int(arr)
+    array = []
+    arr.each do |a|
+      array << a.to_i
+    end
+    array
+  end
+  
+  
 end

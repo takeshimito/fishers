@@ -1,39 +1,35 @@
-<div class="row">
-  <h3>投稿編集</h3>
+<div class="index">
+  <div class="headder">
+    <h5>投稿編集</h5>
+  </div>
+     <div class="col-sm my-3">
     <%= form_with(model: @post, local: true) do |f| %>
       <%= render 'layouts/error_messages', model: f.object %>
-      <div class="form-group">
-        <%= f.label :title, 'タイトル' %>
-          <%= f.text_field :title, class: 'form-control' %>
+      <div class="form-group title">
+          <%= f.text_field :title, class: 'form-control', placeholder: '投稿タイトル' %>
       </div>
-      <div class="form-group">
-        <%= f.label :content, '内容' %>
-          <%= f.text_field :content, class: 'form-control' %>
+      <div class="form-group content">
+          <%= f.text_area :content, class: 'form-control', size: '1x6', value: text_area_value %>
       </div>
       <div class="form-group dropdown">
-        <%= f.label :prefecture_id, '都道府県' %>
         <div class="dropdown-item">
-          <%= f.select :prefecture_id, [
-            ["選択してください"],
-            ["北海道", 1],["青森県", 2],["岩手県", 3],["宮城県", 4],["秋田県", 5],
-            ["山形県", 6],["福島県", 7],["茨城県", 8],["栃木県", 9], ["群馬県", 10],
-            ["埼玉県", 11],["千葉県", 12],["東京都", 13],["神奈川県", 14],["新潟県", 15],
-            ["富山県", 16],["石川県", 17],["福井県", 18],["山梨県", 19],["長野県", 20],
-            ["岐阜県", 21],["静岡県", 22],["愛知県", 23],["三重県", 24],["滋賀県", 25],
-            ["京都府", 26],["大阪府", 27],["兵庫県", 28],["奈良県", 29],["和歌山県", 30],
-            ["鳥取県", 31],["島根県", 32],["岡山県", 33],["広島県", 34],["山口県", 35],
-            ["徳島県", 36],["香川県", 37],["愛媛県", 38],["高知県", 39],["福岡県", 40],
-            ["佐賀県", 41],["長崎県", 42],["熊本県", 43],["大分県", 44],["宮崎県", 45],
-            ["鹿児島県", 46],["沖縄県", 47]
-            ], class: 'form-control' %>
-            </div>
+          <%= f.select :prefecture_id, [ ["都道府県を選択してください"],
+    ["北海道", 1],["青森県", 2],["岩手県", 3],["宮城県", 4],["秋田県", 5],
+    ["山形県", 6],["福島県", 7],["茨城県", 8],["栃木県", 9], ["群馬県", 10],
+    ["埼玉県", 11],["千葉県", 12],["東京都", 13],["神奈川県", 14],["新潟県", 15],
+    ["富山県", 16],["石川県", 17],["福井県", 18],["山梨県", 19],["長野県", 20],
+    ["岐阜県", 21],["静岡県", 22],["愛知県", 23],["三重県", 24],["滋賀県", 25],
+    ["京都府", 26],["大阪府", 27],["兵庫県", 28],["奈良県", 29],["和歌山県", 30],
+    ["鳥取県", 31],["島根県", 32],["岡山県", 33],["広島県", 34],["山口県", 35],
+    ["徳島県", 36],["香川県", 37],["愛媛県", 38],["高知県", 39],["福岡県", 40],
+    ["佐賀県", 41],["長崎県", 42],["熊本県", 43],["大分県", 44],["宮崎県", 45],
+    ["鹿児島県", 46],["沖縄県", 47]], class: 'form-control' %>
+        </div>
       </div>
       <div class="form-group">
-        <%= f.label :location, '位置情報' %>
-          <%= f.text_field :location, class: 'form-control' %>
-      </div>
-      <div class="media">
-        <img src="#">画像を選択してもらう
+        <%= f.label :'写真を投稿' %>
+        <%= f.file_field :image, class: 'form-control' %>
+        <p><%= f.check_box :remove_image %>画像を削除する</p>
       </div>
       <div class="row justify-content-md-center">
       <%= f.submit '更新', class: 'btn btn-primary btn-block col-sm-5 mr-1' %>

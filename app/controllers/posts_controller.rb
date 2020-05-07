@@ -22,8 +22,8 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = current_user.posts.build(post_params)
-    if @post.save
+    @psot = current_user.posts.find(params[:id])
+    if @post.update(post_params)
       flash[:success] = '投稿の編集が完了しました'
       redirect_to @post
     else
@@ -39,10 +39,11 @@ class PostsController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
   
+  
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :prefecture_id, :image, :location)
+    params.require(:post).permit(:title, :content, :prefecture_id, :image, :remove_image, :latitude, :longitude)
   end
   
   def correct_user
@@ -51,5 +52,5 @@ class PostsController < ApplicationController
       redirect_to root_url
     end
   end
-  
+
 end

@@ -1,28 +1,36 @@
-<h4>投稿詳細</h4>
-<div class="row">
-      <div class="card col-sm-10">
-        <h5 class="card-title">
-          <%= link_to @post.user.name, user_path(@post.user) %> : 
-          <%= @post.title %>
-        </h5>
-        <div class="row no-gutters">
-          <div class="col-md-8">
-            <div class="card-body">
-              <div class="card-text">
-                <%= @post.content %>
-              </div>  
+<div class="show">
+  <div class="headder">
+    <h5>投稿詳細</h5>
+  </div>
+  <div class="card-sm my-3 each-card" style="border ">
+    <div class="row no-gutters">
+      <div class="col-md-6 img-box">
+        <%= image_tag @post.image.url, class: "post-img"  if @post.image? %>
+      </div>
+      <div class="col-md-6">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= link_to @post.user.name, user_path(@post.user) %>:
+            <%= link_to @post.title, post_path(@post) %>
+          </h5>
+          <p class="card-text">
+            <%=safe_join(@post.content.split("\n"),tag(:br))%>
+          </p>
+          <p class="card-text">
+            <small class="text-muted">
+              緯度：<%= @post.latitude %>
+              経度：<%= @post.longitude %>
+              <%= @post.prefecture.name %>
+              お気に入り：<%= @post.favorite_users.count %>
+            </small>
+          </p>
+          <% if current_user == @post.user %>
+            <div>
+              <%= link_to '編集', edit_post_path(@post), class: 'btn btn-primary' %>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card-img">
-              <%= image_tag @post.image.url if @post.image? %>
-            </div>
-          </div>
+          <% end %>
         </div>
-        <% if current_user == @post.user %>
-        <div>
-          <%= link_to '編集', edit_post_path(@post), class: 'btn btn-primary' %>
-        </div>
-        <% end %>
       </div>
     </div>
+  </div>
+</div>

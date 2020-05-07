@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-
-  root to: 'toppages#index'
+  get 'rank/index'
+  root to: 'toppages#index' 
+  
+  get 'rank', to: 'rank#index'
+  
+  get 'contact', to: 'contact#index'
+  get 'instruction', to: 'instruction#index'
+  get 'policy', to: 'policy#index'
+  get 'service', to: 'service#index'
   
   get  'withdrawal', to: 'withdrawal#index'
   
@@ -15,7 +22,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :posts, only: [:index, :show, :create, :edit, :update, :destroy]
+  resources :posts, only: [:index, :show, :create, :edit, :update, :destroy] 
   
   resources :favorites, only: [:create, :destroy]
 end

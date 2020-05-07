@@ -11,6 +11,28 @@
   text-align: center;
   border: solid 1px black;
 }
-.card {
-  margin: auto;
+
+.img-box { 
+  border-right: solid 1px black; 
+}
+
+.post-img {
+  width: 100%;
+  height: auto;
+}
+
+.each-card {
+  margin: 4px;
+  border: solid 1px #C0C0C0;
+  border-radius: 10px;
+}
+
+.show {
+   text-align: center;
+  border: solid 1px black;
+}
+
+.user-img {
+  width: 25%;
+  height: auto;
 }

@@ -1,0 +1,28 @@
+<div class="index">
+  <div class="headder">
+    <h5>投稿検索</h5>
+  </div>
+  <div class="col-sm my-3">
+    <p>キーワードで検索</p>
+    <%= form_with url: root_path, method: :get, local: true do |form| %>
+      <%= text_field_tag :content_key %>
+      <%= submit_tag '検索'%>
+    <% end %>
+  </div>
+  <div class="col-sm my-3">
+    <p>都道府県で検索</p>
+    <div class="container">
+      <%= form_with url: root_path, method: :get, local: true do |form| %>
+        <div class="row">
+          <% (1..47).each do |num| %>
+            <% prefecture = Prefecture.find(num) %>
+            <div class="col-sm-2">
+              <%= form.check_box :prefecture_key, {multiple: true}, num, nil %><%= prefecture.name %>
+            </div>
+          <% end %>
+        </div>
+        <%= submit_tag '検索'%>
+      <% end %>
+    </div>  
+  </div>
+</div>
