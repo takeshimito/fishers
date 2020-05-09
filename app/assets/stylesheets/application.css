@@ -37,8 +37,31 @@ aside ul li {
   padding: 0.5em;
 }
 
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'arial black';
+  color: white;
+}
+
+.carousel-caption p {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
+.headder-logo {
+  color: black;
+  font-weight: bold;
+  font-size: 25px;
+  font-family: 'arial black';
+}
+
 .navbar-nav {
   font-size: 12px;
+  font-family: 'arial black';
 }
 
 .headder {

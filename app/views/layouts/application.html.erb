@@ -6,6 +6,7 @@
     <title>Fishers</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -17,11 +18,7 @@
   <body>
     <%= render 'layouts/navbar' %>
     <%= render 'layouts/flash_messages' %>
-  <div class="cover">
-    <div class="full-bg-img">
-      <%= render 'toppages/introduction' %>
-    </div>
-  </div>
+    <%= render 'toppages/introduction' %>
     <div class="row mt-4">
       <aside class="col-sm-2">
         <%= render 'layouts/sidebar' %>
