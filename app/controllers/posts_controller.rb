@@ -22,12 +22,12 @@ class PostsController < ApplicationController
   end
 
   def update
-    @psot = current_user.posts.find(params[:id])
+    @post = Post.find(params[:id])
     if @post.update(post_params)
       flash[:success] = '投稿の編集が完了しました'
       redirect_to @post
     else
-      @posts = current_user.posts.order(id: :desc).page(params[:page])
+
       flash.now[:danger] = '投稿の編集に失敗しました'
       render :edit
     end

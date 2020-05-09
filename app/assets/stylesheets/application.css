@@ -14,7 +14,9 @@
  *= require_self
  */
 body {
-  padding-top: 60px;
+  background-color: #EEEEEE;
+  margin: 0;
+  padding: 0;
 }
 
 footer {
@@ -27,11 +29,48 @@ aside ul {
 }
 
 aside ul li {
-  color: black;
-  border-left: solid 8px orange;
+  border-left: solid 8px gray;
   background: whitesmoke;
   margin-bottom: 5px;
   line-height: 1.5;
   border-radius: 0 15px 15px 0;
   padding: 0.5em;
+}
+
+.navbar-nav {
+  font-size: 12px;
+}
+
+.headder {
+  border-left-style: solid;
+  border-width: 10px;
+  border-color: orange;
+  font-weight: bold;
+  margin: 15px 0;  
+  padding-left: 15px;
+}
+
+.container {
+  margin: 30px 0;
+}
+
+.img-item {
+  width: 100%;
+  height: 480px;
+}
+
+.side-list {
+  color: black;
+  margin-top: 15px;
+}
+
+.container {
+  margin: auto;
+}
+
+.top {
+	width: 100%;
+}
+.carousel-item {
+  padding: 0;
 }

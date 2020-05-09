@@ -24,6 +24,7 @@
         <div class="form-group">
         <%= f.label :image, 'アイコン' %>
         <%= f.file_field :image, class: 'form-control' %>
+        <p><%= f.check_box :remove_image %>画像を削除する</p>
       </div>
       <div><br></div>
       <div>------以下を入力してプロフィールをアップグレードしてみましょう------</div>

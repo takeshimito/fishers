@@ -3,6 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .img-item {
-  height: 520px;
-  width: auto;
+  height: auto;
+  width: 100%;
+}
+
+.carousel-item h4 {
+  color: white;
+  font-family: "Comic Sanss MS";
 }

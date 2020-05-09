@@ -1,40 +1,40 @@
 <div class="container">
-  <div class="row justify-content-center mt-3">
-    <div class="col-sm-10">
-      <div class="card col-sm">
-        <div class="row no-gutters">
-          <div class="col-md-6 img-box">
-            <%= image_tag @user.image.url,class: "user-img" if @user.image? %>
-          </div>
-          <div class="col-md-6">
-            <div class="card-body">
-              <% if @user.content %>
-                <h6 class="card-text"><%=safe_join(@user.content.split("\n"),tag(:br))%></h6>
-              <% end %>
-            </div>
-          </div>
-        </div>
-        <div class="card-header row justify-content-around">
-          <h4 class="card-text"><%= @user.name %></h4>
-          <% if @user.twitter %>
-            <div>
-              <a href="https://twitter.com/<%= @user.twitter %>" target="_blank" ><i class="fab fa-twitter-square fa-2x margin-right5"></i>Twitterへ</a>
-            </div>
-          <% end %>
-          <% if @user == current_user %>
-            <%= link_to edit_user_path(@user), class: 'btn btn-primary' do %><i class="fas fa-user-cog"></i>編集<% end %>
+  <div class="card col-sm">
+    <div class="row no-gutters">
+      <div class="col-md-6 img-box">
+        <%= image_tag @user.image.url,class: "user-img" if @user.image? %>
+      </div>
+      <div class="col-md-6">
+        <div class="card-body">
+          <% if @user.content %>
+            <h6 class="card-text"><%=safe_join(@user.content.split("\n"),tag(:br))%></h6>
           <% end %>
         </div>
       </div>
     </div>
+    <div class="card-header row justify-content-around">
+      <h4 class="card-text"><%= @user.name %></h4>
+      <% if @user.twitter %>
+        <div>
+          <a href="https://twitter.com/<%= @user.twitter %>" target="_blank" ><i class="fab fa-twitter-square fa-2x margin-right5"></i></a>
+        </div>
+      <% end %>
+      <% if @user == current_user %>
+        <%= link_to edit_user_path(@user), class: 'btn', :style=>"background-color:orange" do %><i class="fas fa-user-cog"></i>編集<% end %>
+      <% end %>
+    </div>
   </div>
   <div class="row justify-content-center my-3">
-    <div class="col-sm-10">
+    <div class="col-sm-12">
       <ul class="nav nav-tabs nav-justified mb-3">
         <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">投稿一覧<span class="badge badge-secondary"><%= @count_posts %></span></a></li>
         <li class="nav-item"><a href="<%= likes_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(likes_user_path(@user)) %>">お気に入り投稿一覧<span class="badge badge-secondary"><%= @count_likes %></span></a></li>
       </ul>
-      <%= render 'posts/index', posts: @posts %>
     </div>
-  </div>  
+    <div class="row justify-content-center my-3">
+      <div class="col-sm-12">
+        <%= render 'posts/index', posts: @posts %>
+      </div>
+    </div>
+  </div>
 </div>

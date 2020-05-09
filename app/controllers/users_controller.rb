@@ -56,7 +56,7 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :twitter, :content)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :remove_image, :twitter, :content)
   end
   
   def counts(user)

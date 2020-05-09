@@ -5,34 +5,66 @@
     <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <%= image_tag "img-a.jpg", class: "img-item" %>
+    <div class="carousel-item active col-sm-12">
+      <%= image_tag "13-1280x480.jpg", class: "img-item" %>
       <div class="carousel-caption d-none d-md-block">
-        <h5>全国の釣り場のリアルがここにあります</h5>
-        <p>texte </p>
+        <h4>Here is a lot of imformation about fishing</h4>
       </div>
     </div>
-    <div class="carousel-item">
-      <%= image_tag "img-b.jpg", class: "img-item" %>
+    <div class="carousel-item col-sm-12">
+      <%= image_tag "14-1280x480.jpg", class: "img-item" %>
       <div class="carousel-caption d-none d-md-block">
-        <h5>あなたの釣果を記録しましょう</h5>
-        <p>Let's Record Your Catch!!</p>
+        <h4>Let's Record Your Catch!!</h4>
       </div>
     </div>
-    <div class="carousel-item">
-      <%= image_tag "img-c.jpg", class: "img-item" %>
+    <div class="carousel-item col-sm-12">
+      <%= image_tag "27-1280x480.jpg", class: "img-item" %>
       <div class="carousel-caption d-none d-md-block">
-        <h5>他のユーザーと共有しましょう</h5>
-        <p>Let's Share with Other!!</p>
+        <h4>Let's Share with Other!!</h4>
       </div>
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+</div>
+
+
+<div class="container">
+  <div class="headder"><p>こんなことができます！</p></div>
+  <div class="row mt-5">
+    <div class="col-md-4">
+      <h3 style="height: 90px;">
+       <i class="far fa-edit"></i>
+        <p>釣果の記録</p>
+      </h3>
+      <p>
+        あなたのライフプランで重要な目標を設定するだけ。目標が複数あっても最適な貯蓄額を計算します。
+        インターネットバンキングがあれば、資産状況も自動で同期することができます。
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h3 style="height: 90px;">
+        <i class="far fa-heart"></i>
+        <p>気に入った投稿を記録</p>
+      </h3>
+      <p>
+        １ヶ月ごとに資産額をチェック。前月より増えていれば、設定した目標に最適額を分配します。
+        自動設定もできるため、ストレスなく将来の出費に準備することができます。
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h3 style="height: 90px;">
+        <i class="far fa-grin-squint"></i>
+        <p>使いやすいデザイン</p>
+      </h3>
+      <p>
+        LifeMapのダッシュボードはユーザインタフェースに最適化されています。
+        データはシンプルに表示され、目標のステータスが一目で把握できます。
+        目標設定は詳細ページより簡単に変更できます。
+      </p>
+    </div>
+  </div>
+  <hr>
+  </div>
+</div>
+<div class="row justify-content-center my-3">
+  <%= link_to '今すぐ登録!', signup_path, class: 'btn btn-lg mt-2', :style=>"background-color:orange" %>
 </div>

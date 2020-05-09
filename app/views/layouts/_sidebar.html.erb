@@ -1,14 +1,14 @@
-<div class="side-menu-box">
-  <h2 class="side-menu-head">メニュー</h2>
-  <ul class="side-menu-list">
-    <li><%= link_to rank_path do %><i class="fas fa-medal"></i>お気に入りランキング<% end %></li>
-    <li><%= link_to  root_path do %><i class="fas fa-home"></i>トップページ<% end %></li>
-    <% if logged_in? %>
-      <li><%= link_to user_path(current_user) do %><i class="fas fa-user-circle"></i>プロフィール<% end %></li>
-      <li><%= link_to logout_path, method: :delete  do%><i class="fas fa-sign-out-alt"></i>ログアウト<% end %></li>
-    <% else %>
-      <li><%= link_to signup_path do %><i class="fas fa-check-circle"></i>登録</li><% end %>
-      <li><%= link_to login_path do %><i class="fas fa-sign-in-alt"></i>ログイン</li><% end %>
-    <% end %>
-  </ul>
+<div class="headder">
+  <p>メニュー</p>
 </div>
+<ul class="side-list mt-2">
+  <li><%= link_to  root_path, :style=>"color:black;" do %><i class="fas fa-home"></i>トップページ<% end %></li>
+  <li><%= link_to rank_path, :style=>"color:black;" do %><i class="fas fa-medal"></i>ランキング<% end %></li>
+  <% if logged_in? %>
+    <li><%= link_to user_path(current_user), :style=>"color:black;" do %><i class="fas fa-user-circle"></i>プロフィール<% end %></li>
+    <li><%= link_to logout_path, :style=>"color:black;" , method: :delete  do%><i class="fas fa-sign-out-alt"></i>ログアウト<% end %></li>
+  <% else %>
+    <li><%= link_to signup_path, :style=>"color:black;" do %><i class="fas fa-check-circle"></i>登録</li><% end %>
+    <li><%= link_to login_path, :style=>"color:black;" do %><i class="fas fa-sign-in-alt"></i>ログイン</li><% end %>
+  <% end %>
+</ul>
