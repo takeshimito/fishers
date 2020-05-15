@@ -10,6 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+//= require jquery.turbolinks
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
@@ -29,9 +31,7 @@ function initMap() {
 			   var lng = document.getElementById('longitude');
 			   //f.hiden_fieldのvalueとして送信される値
 			   lat.value = position.coords.latitude;
-			   console.log(lat);
 			   lng.value = position.coords.longitude;
-			   console.log(lng);
        },
       // 取得失敗した場合
       function(error) {

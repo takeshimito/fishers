@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      NotificationMailer.send_confirm_to_user(@user).deliver
       flash[:success] = 'ユーザー登録しました'
       redirect_to root_url
     else

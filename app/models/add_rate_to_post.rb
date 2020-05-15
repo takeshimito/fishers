@@ -1,0 +1,2 @@
+class AddRateToPost < ApplicationRecord
+end

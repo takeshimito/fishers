@@ -1,44 +1,51 @@
-<div class="text-center">
-  <h1>ユーザー情報編集</h1>
-</div>
-  <div class="row">
-    <div class="col-sm-6 offset-sm-3">
-      <%= form_with(model: @user, local: true) do |f| %>
-        <%= render 'layouts/error_messages', model: f.object %>
-        <div class="form-group">
-          <%= f.label :name, 'ユーザー名' %>
+<div class="row mt-4">
+  <aside class="col-sm-2">
+    <%= render 'layouts/sidebar' %>
+  </aside>
+  <div class="col-sm-8">
+    <div class="text-center">
+      <h1>ユーザー情報編集</h1>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 offset-sm-3">
+        <%= form_with(model: @user, local: true) do |f| %>
+          <%= render 'layouts/error_messages', model: f.object %>
+          <div class="form-group">
+            <%= f.label :name, 'ユーザー名' %>
             <%= f.text_field :name, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :email, 'メールアドレス' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :email, 'メールアドレス' %>
             <%= f.email_field :email, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :password, 'パスワード' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password, 'パスワード' %>
             <%= f.password_field :password, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :password_confirmation, 'パスワード確認' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password_confirmation, 'パスワード確認' %>
             <%= f.password_field :password_confirmation, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-        <%= f.label :image, 'アイコン' %>
-        <%= f.file_field :image, class: 'form-control' %>
-        <p><%= f.check_box :remove_image %>画像を削除する</p>
-      </div>
-      <div><br></div>
-      <div>------以下を入力してプロフィールをアップグレードしてみましょう------</div>
-      <div><br></div>
-       <div class="form-group">
-          <%= f.label :content, '自己紹介文' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :image, 'アイコン' %>
+            <%= f.file_field :image, class: 'form-control' %>
+            <p><%= f.check_box :remove_image %>画像を削除する</p>
+          </div>
+          <div><br></div>
+          <div>------以下を入力してプロフィールをアップグレードしてみましょう------</div>
+          <div><br></div>
+          <div class="form-group">
+            <%= f.label :content, '自己紹介文' %>
             <%= f.text_area :content, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :twitter, 'Twitterアカウント名*(@以降を半角で入力ください)' %>
-          <%= f.text_field :twitter, class: 'form-control'%>
-        </div>
-        <%= f.submit 'ユーザー情報更新', class: 'btn btn-primary btn-block' %>
-      <% end %>
-      <%= link_to 'アカウントの削除', withdrawal_path, class: 'btn btn-danger btn-block mt-3' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :twitter, 'Twitterアカウント名*(@以降を半角で入力ください)' %>
+            <%= f.text_field :twitter, class: 'form-control'%>
+          </div>
+          <%= f.submit 'ユーザー情報更新', class: 'btn btn-primary btn-block' %>
+        <% end %>
+        <%= link_to 'アカウントの削除', withdrawal_path, class: 'btn btn-danger btn-block mt-3' %>
+      </div>
     </div>
   </div>
+</div>

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'rank/index'
   root to: 'toppages#index' 
   
   get 'rank', to: 'rank#index'
