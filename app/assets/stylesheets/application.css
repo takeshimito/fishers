@@ -97,3 +97,18 @@ aside ul li {
 .carousel-item {
   padding: 0;
 }
+
+.emp {
+  height: 53px;
+}
+
+body,
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}

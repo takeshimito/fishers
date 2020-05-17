@@ -62,7 +62,7 @@ Rails.application.configure do
   domain: 'gmail.com',
   port: 587,
   user_name: 'fishing.navi.123@gmail.com',
-  password: 'original123@',
+  password: 'mvqwbdgmxeyfarsn',
   authentication: 'plain',
   enable_starttls_auto: true
   }

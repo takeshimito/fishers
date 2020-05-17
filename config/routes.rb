@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
+  
   root to: 'toppages#index' 
   
   get 'rank', to: 'rank#index'
-  
-  get 'contact', to: 'contact#index'
+
   get 'instruction', to: 'instruction#index'
   get 'policy', to: 'policy#index'
   get 'service', to: 'service#index'
   
   get  'withdrawal', to: 'withdrawal#index'
+  
+  get 'inquiries', to: 'inquiries#new'
+  post 'inquiries', to: 'inquiries#create'
   
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

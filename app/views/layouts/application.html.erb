@@ -16,14 +16,16 @@
     <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
   </head>
   <body>
-    <div class="mb-5">
-      <%= render 'layouts/navbar' %>      
+    <div id="wrapper">
+      <main>
+        <%= render 'layouts/navbar', class: 'mb-5' %>
+        <%= render 'layouts/flash_messages' %>
+        <%= yield %>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCISOeNpQdYxywtcTIhFqsgbrWRmU7bJLY&callback=initMap"></script>
+      </main>
+      <footer>
+        <%= render 'layouts/footer' %>
+      </footer>
     </div>
-    <%= render 'layouts/flash_messages' %>
-    <%= yield %>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCISOeNpQdYxywtcTIhFqsgbrWRmU7bJLY&callback=initMap"></script>
   </body>
-  <footer>
-      <%= render 'layouts/footer' %>
-    </footer>
 </html>
