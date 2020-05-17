@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   
   get '/', to: 'toppagaes#index'
   
-  root to: 'toppages#index'
-  
   get 'rank', to: 'rank#index'
 
   get 'instruction', to: 'instruction#index'
