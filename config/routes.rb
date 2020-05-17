@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  get '/', to: 'toppagaes#index'
+  get '/', to: 'toppages#index'
   
   get 'rank', to: 'rank#index'
 
