@@ -79,7 +79,7 @@ aside ul li {
 
 .img-item {
   width: 100%;
-  height: 480px;
+  height: auto;
 }
 
 .side-list {

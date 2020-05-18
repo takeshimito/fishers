@@ -19,7 +19,7 @@
         <div class="row">
           <% (1..47).each do |num| %>
             <% prefecture = Prefecture.find(num) %>
-            <div class="col-sm-2">
+            <div class="col-xs-2">
               <%= form.check_box :prefecture_key, {multiple: true}, num, nil %><%= prefecture.name %>
             </div>
           <% end %>
