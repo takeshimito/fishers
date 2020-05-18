@@ -89,5 +89,16 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    address: 'smtp.gmail.com',
+    domain: 'gmail.com',
+    port: 587,
+    user_name: 'fishing.navi.123@gmail.com',
+    password: 'mvqwbdgmxeyfarsn',
+    authentication: 'plain',
+    enable_starttls_auto: true
+  }
+  
   config.action_mailer.default_url_options = { host: "https://fishing-navi-123.herokuapp.com/"}
 end
