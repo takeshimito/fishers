@@ -13,19 +13,22 @@
  *= require_tree .
  *= require_self
  */
+ 
+ /* body */
 body {
   background-color: #EEEEEE;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-footer {
-  margin-top: 10px;
-}
-
+/* side-nav */
 aside ul {
   padding: 0;
   position: relative;
+  margin-top: 15px;
 }
 
 aside ul li {
@@ -37,6 +40,7 @@ aside ul li {
   padding: 0.5em;
 }
 
+/* introduction */
 .carousel-caption {
   position: absolute;
   top: 50%;
@@ -49,9 +53,22 @@ aside ul li {
   font-size: 20px;
   font-weight: bold;
   color: white;
-  font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  font-family: 'Lato';
 }
 
+
+.carousel-item {
+  padding: 0;
+}
+
+
+/* --navbar-- */
+.navbar-nav {
+  font-size: 12px;
+  font-family: 'arial black';
+}
+
+/* header */
 .headder-logo {
   color: black;
   font-weight: bold;
@@ -59,11 +76,13 @@ aside ul li {
   font-family: 'arial black';
 }
 
-.navbar-nav {
-  font-size: 12px;
-  font-family: 'arial black';
+/* footer */
+footer {
+  margin-top: auto;
+  
 }
 
+/* --each html-- */
 .headder {
   border-left-style: solid;
   border-width: 10px;
@@ -73,42 +92,12 @@ aside ul li {
   padding-left: 15px;
 }
 
-.container {
-  margin: 30px 0;
-}
-
+/* image */
 .img-item {
   width: 100%;
   height: auto;
 }
 
-.side-list {
-  color: black;
-  margin-top: 15px;
-}
-
-.container {
+.img-box {
   margin: auto;
-}
-
-.top {
-	width: 100%;
-}
-.carousel-item {
-  padding: 0;
-}
-
-.emp {
-  height: 53px;
-}
-
-body,
-#wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-footer {
-  margin-top: auto;
 }

@@ -1,20 +1,22 @@
 <%= render 'toppages/introduction' %>
+<div class="container">
   <div class="row mt-4">
     <aside class="col-sm-2">
       <%= render 'layouts/sidebar' %>
     </aside>
-  <div class="col-sm-8">
-    <% if logged_in? %>
-      <%= render 'posts/new', post: @post %>
-    <% end %>
-    <div class="row justify-content-center my-3">
-      <div class="col-sm-12">
-        <%= render 'toppages/search' %>
+    <div class="col-sm-8">
+      <% if logged_in? %>
+        <%= render 'posts/new', post: @post %>
+      <% end %>
+      <div class="row justify-content-center my-3">
+        <div class="col-sm-12">
+          <%= render 'toppages/search' %>
+        </div>
       </div>
-    </div>
-    <div class="row justify-content-center my-3">
-      <div class="col-sm-12">
-        <%= render 'posts/index', posts: @posts %>
+      <div class="row justify-content-center my-3">
+        <div class="col-sm-12">
+          <%= render 'posts/index', posts: @posts %>
+        </div>
       </div>
     </div>
   </div>

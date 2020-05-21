@@ -1,8 +1,7 @@
 <%= javascript_include_tag 'jquery.raty' %>
-<div class="container">
-  <div class="headder">
-    <p>最新の投稿一覧</p>
-  </div>
+<div class="headder">
+  <p>最新の投稿一覧</p>
+</div>
 <div class="index">
   <% posts.each do |post| %>
     <div class="row justify-content-center mt-1">
@@ -10,7 +9,11 @@
         <div class="card col-sm">
           <div class="row no-gutters">
             <div class="col-md-6 img-box">
-              <%= image_tag post.image.url, class: "post-img" if post.image? %>
+              <% if post.image.present? %>
+                <%= image_tag post.image.url, class: "img-item" %>
+              <% else %>
+                <%= image_tag 'no_image.png', class: "img-item" %>
+              <% end %>
             </div>
             <div class="col-md-6">
               <div class="card-body">
@@ -48,5 +51,4 @@
       </div>
     </div>
   <% end %>
-</div>
 </div>

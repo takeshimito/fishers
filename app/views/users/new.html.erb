@@ -1,25 +1,25 @@
-<div class="text-center">
-  <h3>アカウント登録</h3>
-</div>
-<div class="row">
+<div class="container">
+  <div class="headder">
+    <h3>アカウント登録</h3>
+  </div>
   <div class="col-sm-6 offset-sm-3">
     <%= form_with(model: @user, local: true) do |f| %>
       <%= render 'layouts/error_messages', model: f.object %>
       <div class="form-group">
         <%= f.label :name, 'ユーザー名（必須）' %>
-          <%= f.text_field :name, class: 'form-control' %>
+        <%= f.text_field :name, class: 'form-control' %>
       </div>
       <div class="form-group">
         <%= f.label :email, 'メールアドレス（必須）' %>
-          <%= f.email_field :email, class: 'form-control' %>
+        <%= f.email_field :email, class: 'form-control' %>
       </div>
       <div class="form-group">
         <%= f.label :password, 'パスワード（必須・半角６文字以上で設定してください）' %>
-          <%= f.password_field :password, class: 'form-control' %>
+        <%= f.password_field :password, class: 'form-control' %>
       </div>
       <div class="form-group">
         <%= f.label :password_confirmation, 'パスワード確認' %>
-          <%= f.password_field :password_confirmation, class: 'form-control' %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
       </div>
       <div class="form-group">
         <%= f.label :image, 'アイコン' %>

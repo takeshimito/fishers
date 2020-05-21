@@ -5,32 +5,30 @@
     <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
-    <div class="carousel-item active col-sm-12">
+    <div class="carousel-item active col-sx-12">
       <%= image_tag "13-1280x480.jpg", class: "img-item", :style=>"opacity:0.8" %>
-      <div class="carousel-caption d-none d-block">
+      <div class="carousel-caption d-none d-lg-block">
         <h2>Fishing NAVI</h2>
         <p>使いやすさを追求した</p>
         <p>全国の釣り情報記録</p>
       </div>
     </div>
-    <div class="carousel-item col-sm-12">
+    <div class="carousel-item col-sx-12">
       <%= image_tag "14-1280x480.jpg", class: "img-item", :style=>"opacity:0.9" %>
-      <div class="carousel-caption d-none d-block">
+      <div class="carousel-caption d-none d-lg-block">
         <h2>Let's Record Your Catch!!</h2>
         <p>記録できる</p>
       </div>
     </div>
-    <div class="carousel-item col-sm-12">
+    <div class="carousel-item col-sx-12">
       <%= image_tag "27-1280x480.jpg", class: "img-item", :style=>"opacity:0.9" %>
-      <div class="carousel-caption d-none d-block">
+      <div class="carousel-caption d-none d-lg-block">
         <h2>Let's Share with Other!!</h2>
         <p>共有できる</p>
       </div>
     </div>
   </div>
 </div>
-
-
 <div class="container">
   <div class="headder"><p>こんなことができます！</p></div>
   <div class="row mt-5">
@@ -65,6 +63,8 @@
   <hr>
   </div>
 </div>
-<div class="row justify-content-center my-3">
+<%  if !logged_in? %> 
+<div class="text-center">
   <%= link_to '今すぐ登録!', signup_path, class: 'btn btn-lg mt-2', :style=>"background-color:orange" %>
 </div>
+<% end %>

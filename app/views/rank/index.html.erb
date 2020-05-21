@@ -1,17 +1,16 @@
 <%= javascript_include_tag 'jquery.raty' %>
-
-<div class="index">
+<div class="container">
   <div class="headder">
-    <p>ランキング</p>
+    <h3>ランキング</h3>
     <p>お気に入り（ハート）の数を参考に多い順に並べております。</p>
   </div>
   <% @posts.each do |post| %>
     <div class="row justify-content-center mt-1">
-      <div class="col-sm-10">
+      <div class="col-sm-8">
         <div class="card col-sm">
           <div class="row no-gutters">
             <div class="col-md-6 img-box">
-              <%= image_tag post.image.url, class: "post-img" if post.image? %>
+              <%= image_tag post.image.url, class: "img-item" if post.image? %>
             </div>
             <div class="col-md-6">
               <div class="card-body">

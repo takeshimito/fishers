@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row justify-content-sm-center">
-    <div class="center jumbotron col-sm-10">
+    <div class="center jumbotron col-sm-8">
       <div class="text-center">
-        <h1>本当にアカウントを削除しますか？</h1>
+        <h2>本当にアカウントを削除しますか？</h2>
       </div>
     </div>
   </div>  
   <div class="row justify-content-around">
-    <%= link_to 'YES', current_user, method: :delete, class: 'btn btn-danger col-sm-4' %>
-    <%= link_to 'NO', user_path(current_user), class: 'btn btn-primary col-sm-4' %>
+    <%= link_to 'YES', current_user, method: :delete, class: 'btn btn-danger col-sm-3' %>
+    <%= link_to 'NO', user_path(current_user), class: 'btn btn-primary col-sm-3' %>
   </div>
 </div>

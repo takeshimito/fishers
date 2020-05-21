@@ -1,32 +1,26 @@
-<div class="container">
 <div class="headder">
-    <p>投稿検索</p>
-  </div>
-<div class="index">
-  <div class="col-sm">
-    <div class="container">
-      <p class="search-title">キーワードで検索</p>
-      <%= form_with url: root_path, method: :get, local: true do |form| %>
-        <%= text_field_tag :content_key %>
-        <%= submit_tag '検索'%>
-      <% end %>
-    </div>
-  </div>
-  <div class="col-sm my-3">
-    <div class="container">
-      <p class="search-title">都道府県で検索</p>
-      <%= form_with url: root_path, method: :get, local: true do |form| %>
-        <div class="row">
-          <% (1..47).each do |num| %>
-            <% prefecture = Prefecture.find(num) %>
-            <div class="col-xs-2">
-              <%= form.check_box :prefecture_key, {multiple: true}, num, nil %><%= prefecture.name %>
-            </div>
-          <% end %>
-        </div>
-        <%= submit_tag '検索'%>
-      <% end %>
-    </div>  
-  </div>
+  <p>投稿検索</p>
 </div>
+<div class="index my-3">
+  <div>
+    <p>キーワードで検索</p>
+    <%= form_with url: root_path, method: :get, local: true do |form| %>
+      <%= text_field_tag :content_key %>
+      <%= submit_tag '検索'%>
+    <% end %>
+  </div>
+  <div>
+    <p>都道府県で検索</p>
+    <%= form_with url: root_path, method: :get, local: true do |form| %>
+      <div class="row">
+        <% (1..47).each do |num| %>
+          <% prefecture = Prefecture.find(num) %>
+          <div class="col-xs-2 ml-1">
+            <%= form.check_box :prefecture_key, {multiple: true}, num, nil %><%= prefecture.name %>
+          </div>
+        <% end %>
+      </div>
+      <%= submit_tag '検索'%>
+    <% end %>
+  </div>
 </div>
