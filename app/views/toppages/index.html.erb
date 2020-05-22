@@ -15,7 +15,11 @@
       </div>
       <div class="row justify-content-center my-3">
         <div class="col-sm-12">
-          <%= render 'posts/index', posts: @posts %>
+          <%if @count_posts == 0 %>
+            <h1>結果がありません</h1>
+          <% else %>
+           <%= render 'posts/index', posts: @posts %>
+          <% end %>
         </div>
       </div>
     </div>
