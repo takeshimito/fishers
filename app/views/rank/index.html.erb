@@ -1,4 +1,3 @@
-<%= javascript_include_tag 'jquery.raty' %>
 <div class="container">
   <div class="headder">
     <h3>ランキング</h3>
@@ -17,16 +16,6 @@
                 <p class="card-title">投稿者：<%= link_to post.user.name, user_path(post.user), :style=>"color:black;" %></p>
                 <p class="card-title">タイトル：<%= link_to post.title, post_path(post), :style=>"color:black;" %></p>
                 <p class="card-text" >おすすめ度：<%= image_tag "star-on.png" %><%= post.rate %></p>
-                  <script>
-                    $('#star-rate-<%= post.id %>').raty({
-                    starOff:  '<%= asset_path('star-off.png') %>',
-                    starOn : '<%= asset_path('star-on.png') %>',
-                    starHalf: '<%= asset_path('star-half.png') %>',
-                    half: true,
-                    readOnly: true,
-                    score: <%= post.rate %>,
-                    });
-                  </script>
                 <p class="card-text">
                   <%=safe_join(post.content.split("\n"),tag(:br))%>
                 </p>
